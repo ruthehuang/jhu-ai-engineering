@@ -1,0 +1,1 @@
+print(r"Hello World! My name is Ruthe, and my fun fact is that I have proportionally short pinkies. Neither of my pinky fingers reaches the second knuckle (distal phalanx), which was the bane of my childhood piano teacher.")
