@@ -8,7 +8,19 @@ Build a Python simulation for a cloud kitchen that:
 - Tracks expiry risk.
 - Produces restock recommendations and a business-friendly summary.
 
-## 2. Data Structures (from `seed_data.py`)
+## 2. Project Setup
+m3-cloud-kitchen/
+├── ref/                    # Reference materials
+│   ├── AI-Assisted Cloud Kitchen Inventory Simulation.pdf
+│   ├── AI_USAGE_LOG.md
+│   └── PROJECT_SPEC.md
+└── src/                    # Main project code
+    ├── main.py             # Primary script for order fulfillment simulation
+    ├── seed_data.py        # Data
+    ├── test_main.py        # Unit tests for main.py
+    └── business_summary.html  # Example generated HTML report
+
+## 3. Data Structures (from `seed_data.py`)
 - **Recipes**  
   - List of recipe records.  
   - Features: `recipe_id`, `name`, `ingredients` (list of `{name, qty_grams}`).
@@ -29,7 +41,7 @@ Build a Python simulation for a cloud kitchen that:
   - List of delivery status entries.  
   - Features: `order_id`, `delivered` (bool), `remark`.
 
-## 3. Business Rules (High Level)
+## 4. Business Rules (High Level)
 
 ### Order Processing
 - For each order:
@@ -80,7 +92,7 @@ At the end of the simulation, produce a summary including:
 - Restock recommendations.
 - Ingredients that are low, out of stock, expired, or expiring soon.
 
-## 4. Architecture & Components
+## 5. Architecture & Components
 
 - **`main.py`**
   - Entry point for running the simulation.
@@ -113,7 +125,7 @@ At the end of the simulation, produce a summary including:
 - **`AI_USAGE_LOG.md`**
   - Log of major AI interactions: prompt, response summary, what was accepted/changed/rejected, and issues found.
 
-## 5. Implementation Plan
+## 6. Implementation Plan
 
 **Task 1 – Project Setup**
 - Create/organize: `main.py`, `seed_data.py`, `test_main.py`, `PROJECT_SPEC.md`, `AI_USAGE_LOG.md`.
@@ -245,7 +257,7 @@ At the end of the simulation, produce a summary including:
 **Option D**
 - Generate a polished business report in Markdown, CSV, or HTML format.
 
-## 6. Testing Strategy
+## 7. Testing Strategy
 
 - Use `pytest` (or `unittest`) via `test_main.py`.
 - For each major function:
@@ -260,7 +272,7 @@ At the end of the simulation, produce a summary including:
   - Restock/expiry rules.
   - Final summary (e.g., correct counts).
 
-## 7. Constraints & Assumptions
+## 8. Constraints & Assumptions
 
 - Single-process, in-memory simulation (no database or external IO).
 - Seed data is trusted source of truth; not modified on disk.
@@ -269,7 +281,7 @@ At the end of the simulation, produce a summary including:
 - All quantities measured in grams.
 - Fulfillment baseline: all-or-nothing (no partial deliveries).
 
-## 8. Known Issues / Open Questions
+## 9. Known Issues / Open Questions
 
 - Clarify whether simulation date should always be `today` or configurable.
 - Consider performance only after correctness (dataset expected to be small).
