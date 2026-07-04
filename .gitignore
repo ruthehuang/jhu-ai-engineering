@@ -1,0 +1,24 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.DS_Store
+
+# Virtual environments
+*.venv/
+venv/
+.env/
+.m3venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# IDE / tooling
+.vscode/
+.idea/
+
+# Project files
+*.pdf
+*.html
